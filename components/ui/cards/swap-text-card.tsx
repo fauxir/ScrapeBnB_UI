@@ -9,7 +9,7 @@ interface FlipTextCardProps {
 export default function SwapTextCard({ initialText, finalText }: FlipTextCardProps) {
   return (
     <div className="group flex min-h-48 w-full flex-col justify-between rounded-3xl p-6 md:w-[80%] bg-white/10 dark:bg-black/10 backdrop-blur-md border border-white/20 dark:border-black/20 shadow-lg">
-      <h5 className="mb-2 text-sm font-medium uppercase tracking-wide text-gray-500">Powered by <Link href="https://www.npmjs.com/package/scrapebnb"><span className="text-orange-500">ScrapeBnB</span></Link></h5>
+      <h5 className="mb-2 text-sm font-medium uppercase tracking-wide text-gray-500">Powered by <Link href="https://www.npmjs.com/package/scrapebnb" target="_blank" rel="noopener noreferrer"><span className="text-orange-500">ScrapeBnB</span></Link></h5>
       <div className="flex flex-col justify-between md:min-w-72">
         <div className="md:hidden">
           <div className="text-lg font-semibold text-gray-500">{initialText}</div>
