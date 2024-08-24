@@ -8,14 +8,13 @@ interface PropertyDetailsProps {
 
 export const PropertyDetails: React.FC<PropertyDetailsProps> = ({ propertyData, status, error }) => (
   <div className="w-full lg:w-1/2 lg:max-w-xl ">
-    <div className="group min-h-40 flex w-full flex-col justify-between rounded-3xl p-4 md:p-6 bg-white/10 dark:bg-black/10 backdrop-blur-md border border-white/20 dark:border-black/20 shadow-lg">
+    <div className="group min-h-40 flex w-full flex-col justify-between rounded-3xl p-4 md:p-6 bg-white/10 dark:bg-black/10 backdrop-blur-md border border-white/20 dark:border-black/20 shadow-lg opacity-90">
       {propertyData ? (
         <>
-          <p className="text-gray-500 font-bold">Received data:</p>
-          <p className="text-gray-500">Property name: {propertyData?.title}</p>
-          <p className="text-gray-500">Property type: {propertyData?.room_type}</p>
+          <p className="text-gray-500 font-bold">Property name: <span className="font-normal">{propertyData?.title}</span></p>
+          <p className="text-gray-500 font-bold">Property type: <span className="font-normal">{propertyData?.room_type}</span></p>
           <div className="text-gray-500">
-            <p>No of bedrooms and bathrooms:</p>
+            <p className="font-bold">No of bedrooms and bathrooms:</p>
             <ul className="list-disc list-inside">
               {propertyData?.sub_description?.items
                 .filter((item: string) => item.toLowerCase().includes("bedroom") || item.toLowerCase().includes("bathroom"))
@@ -25,7 +24,7 @@ export const PropertyDetails: React.FC<PropertyDetailsProps> = ({ propertyData, 
             </ul>
           </div>
           <div className="text-gray-500">
-            <p>List of amenities:</p>
+            <p className="font-bold">List of amenities:</p>
             <ul className="list-disc list-inside">
               {propertyData?.amenities.map((category: any, categoryIndex: number) => (
                 <li key={categoryIndex}>
@@ -52,7 +51,7 @@ export const PropertyDetails: React.FC<PropertyDetailsProps> = ({ propertyData, 
       ) : error === "Property not found :(" ? (
         <p className="text-red-500 font-bold">{error}</p>
       ) : (
-        <p className="text-gray-500 font-bold">Add the property link and press submit</p>
+        <p className="text-gray-500 font-bold">Add the AirBnB property link and press submit</p>
       )}
     </div>
   </div>

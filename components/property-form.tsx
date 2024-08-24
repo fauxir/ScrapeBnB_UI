@@ -21,13 +21,13 @@ export const PropertyForm: React.FC<PropertyFormProps> = ({ onSubmit, status }) 
 
   return (
     <div className="w-full lg:w-1/2 lg:max-w-xl">
-      <div className="group flex h-fit w-full flex-col justify-between rounded-3xl p-4 md:p-6 bg-white/10 dark:bg-black/10 backdrop-blur-md border border-white/20 dark:border-black/20 shadow-lg">
+      <div className="group flex h-fit w-full flex-col justify-between rounded-3xl p-4 md:p-6 bg-white/10 dark:bg-black/10 backdrop-blur-md border border-white/20 dark:border-black/20 shadow-lg opacity-90">
         <form className="gap-4 h-28 z-50 flex flex-col justify-between" onSubmit={handleSubmit}>
           <input
             type="text"
             name="airbnb_links"
             id="airbnb_links"
-            placeholder="Property link"
+            placeholder="https://www.airbnb.co.uk/rooms/<property number>"
             value={propertyLink}
             onChange={(e) => setPropertyLink(e.target.value)}
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
