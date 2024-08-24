@@ -7,8 +7,8 @@ interface PropertyDetailsProps {
 }
 
 export const PropertyDetails: React.FC<PropertyDetailsProps> = ({ propertyData, status, error }) => (
-  <div className="w-full md:w-1/2 max-w-xl">
-    <div className="group flex h-full w-full flex-col justify-between rounded-3xl p-4 md:p-6 bg-white/10 dark:bg-black/10 backdrop-blur-md border border-white/20 dark:border-black/20 shadow-lg">
+  <div className="w-full lg:w-1/2 lg:max-w-xl ">
+    <div className="group min-h-40 flex w-full flex-col justify-between rounded-3xl p-4 md:p-6 bg-white/10 dark:bg-black/10 backdrop-blur-md border border-white/20 dark:border-black/20 shadow-lg">
       {propertyData ? (
         <>
           <p className="text-gray-500 font-bold">Received data:</p>

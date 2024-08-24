@@ -20,9 +20,9 @@ export const PropertyForm: React.FC<PropertyFormProps> = ({ onSubmit, status }) 
   };
 
   return (
-    <div className="w-full md:w-1/2 max-w-xl">
+    <div className="w-full lg:w-1/2 lg:max-w-xl">
       <div className="group flex h-fit w-full flex-col justify-between rounded-3xl p-4 md:p-6 bg-white/10 dark:bg-black/10 backdrop-blur-md border border-white/20 dark:border-black/20 shadow-lg">
-        <form className="gap-4 z-50 flex flex-col" onSubmit={handleSubmit}>
+        <form className="gap-4 h-28 z-50 flex flex-col justify-between" onSubmit={handleSubmit}>
           <input
             type="text"
             name="airbnb_links"
