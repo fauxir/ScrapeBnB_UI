@@ -48,7 +48,7 @@ export default function Home() {
       {!propertyData && <Disclaimer />}
       <div className="w-full flex justify-center align-middle">
         <div className="flex justify-center align-middle w-full md:w-[80%]">
-          <div className="w-full flex flex-col lg:flex-row justify-between items-center md:items-start gap-4 md:gap-10">
+          <div className="w-full flex flex-col lg:flex-row justify-between items-center md:items-start gap-4 lg:gap-10">
             <PropertyForm onSubmit={handleSubmit} status={status} />
             <PropertyDetails
               propertyData={propertyData}
