@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import getListingDetails from "@/lib/get-property";
 import { Header } from "@/components/header";
 import { Disclaimer } from "@/components/disclaimer";
@@ -46,6 +46,16 @@ export default function Home() {
   const handleResetPropertyData = () => {
     setPropertyData(null);  // Reset the propertyData state to null
   };
+
+  useEffect(() => {
+    if (error) {
+      const timer = setTimeout(() => {
+        setError(null);
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [error]);
 
   return (
     <main className="flex z-50 min-h-screen flex-col items-center justify-between p-4 md:p-24 overflow-y-auto">
