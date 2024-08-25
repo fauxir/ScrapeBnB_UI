@@ -5,22 +5,18 @@ import { cn } from "@/utils/cn";
 
 interface PropertyFormProps {
   onSubmit: (propertyLink: string) => Promise<void>;
-  onResetPropertyData: () => void;
+  onResetPropertyData: () => void; 
   status: "loading" | "Submit" | "Submitted";
 }
 
-export const PropertyForm: React.FC<PropertyFormProps> = ({
-  onSubmit,
-  onResetPropertyData,
-  status,
-}) => {
+export const PropertyForm: React.FC<PropertyFormProps> = ({ onSubmit, onResetPropertyData, status }) => {
   const [propertyLink, setPropertyLink] = useState<string>("");
   const [error, setError] = useState<string | null>(null);
   const isEnabled = status === "Submit";
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
+    
     // Regex to match the Airbnb URL pattern
     const urlPattern = /^https:\/\/www\.airbnb\.co\.uk\/rooms\/\d+$/;
 
@@ -28,14 +24,14 @@ export const PropertyForm: React.FC<PropertyFormProps> = ({
     if (!propertyLink || !urlPattern.test(propertyLink)) {
       setError("Please enter a valid Airbnb link.");
       onResetPropertyData();
-      setPropertyLink("");
+      setPropertyLink("")
       return;
     }
 
     setError(null);
-
+    
     if (!isEnabled) return;
-
+    
     await onSubmit(propertyLink);
     setPropertyLink("");
   };
@@ -54,10 +50,7 @@ export const PropertyForm: React.FC<PropertyFormProps> = ({
   return (
     <div className="w-full lg:w-1/2 lg:max-w-xl">
       <div className="group flex h-fit w-full flex-col justify-between rounded-3xl p-4 md:p-6 bg-white/10 dark:bg-black/10 backdrop-blur-md border border-white/20 dark:border-black/20 shadow-lg opacity-90">
-        <form
-          className="gap-4 h-36 md:h-28 -z-10 flex flex-col justify-between"
-          onSubmit={handleSubmit}
-        >
+        <form className="gap-4 h-36 md:h-28 -z-10 flex flex-col justify-between" onSubmit={handleSubmit}>
           <input
             type="text"
             name="airbnb_links"
