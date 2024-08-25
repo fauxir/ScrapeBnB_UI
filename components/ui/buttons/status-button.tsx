@@ -4,10 +4,13 @@ import { CheckCircle2, CircleDashed } from "lucide-react";
 
 import { cn } from "@/utils/cn";
 
-const wait = async (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+const wait = async (ms: number) =>
+  new Promise((resolve) => setTimeout(resolve, ms));
 
 export default function StatusButton() {
-  const [status, setStatus] = useState<"loading" | "Add to cart" | "Added to cart">();
+  const [status, setStatus] = useState<
+    "loading" | "Add to cart" | "Added to cart"
+  >();
   const isEnabled = !status || status === "Add to cart";
 
   const changeStatus = async () => {

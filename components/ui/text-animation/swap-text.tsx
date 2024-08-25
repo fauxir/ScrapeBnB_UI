@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { cn } from "@/utils/cn"; 
+import { cn } from "@/utils/cn";
 
 interface SwapTextProps extends React.ComponentPropsWithoutRef<"div"> {
   /**
@@ -57,9 +57,15 @@ export default function SwapText({
   const longWord = finalText.length > initialText.length ? finalText : null;
 
   return (
-    <div {...props} className={cn("relative overflow-hidden text-foreground", className)}>
+    <div
+      {...props}
+      className={cn("relative overflow-hidden text-foreground", className)}
+    >
       <div
-        className={cn("group cursor-pointer select-none text-3xl font-bold", textClassName)}
+        className={cn(
+          "group cursor-pointer select-none text-3xl font-bold",
+          textClassName
+        )}
         onClick={() => !disableClick && setActive((current) => !current)}
       >
         <span
@@ -72,7 +78,9 @@ export default function SwapText({
           {initialText}
           {
             /* Trick to make sure it can always fit all available words after transition as the second word is set to absolute*/
-            Boolean(longWord?.length) && <span className="invisible h-0">{longWord}</span>
+            Boolean(longWord?.length) && (
+              <span className="invisible h-0">{longWord}</span>
+            )
           }
         </span>
         <span

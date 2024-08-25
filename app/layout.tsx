@@ -19,9 +19,7 @@ export default function RootLayout({
     <html lang="en" className="h-full">
       <body className={`${inter.className} h-full relative`}>
         <Grid className="fixed top-[-20rem] inset-0 z-0 transform -skew-y-12 opacity-35 overflow-hidden  h-[170%]" />
-        <div className="relative z-10 h-full overflow-auto">
-          {children}
-        </div>
+        <div className="relative z-10 h-full overflow-auto">{children}</div>
       </body>
     </html>
   );

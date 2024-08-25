@@ -42,9 +42,8 @@ export default function Home() {
     setStatus("Submit");
   };
 
-
   const handleResetPropertyData = () => {
-    setPropertyData(null);  // Reset the propertyData state to null
+    setPropertyData(null); // Reset the propertyData state to null
   };
 
   useEffect(() => {
@@ -64,7 +63,11 @@ export default function Home() {
       <div className="w-full flex justify-center align-middle">
         <div className="flex justify-center align-middle w-full md:w-[80%]">
           <div className="w-full flex flex-col lg:flex-row justify-between items-center md:items-start gap-4 lg:gap-10">
-            <PropertyForm onSubmit={handleSubmit} status={status}  onResetPropertyData={handleResetPropertyData}/>
+            <PropertyForm
+              onSubmit={handleSubmit}
+              status={status}
+              onResetPropertyData={handleResetPropertyData}
+            />
             <PropertyDetails
               propertyData={propertyData}
               status={status}
