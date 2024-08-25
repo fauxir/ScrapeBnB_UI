@@ -90,7 +90,7 @@ npm start
 This project is hosted on a home server using a custom infrastructure setup:
 
 - 🐳 Docker for containerization
-- ☁️ Cloudflare for DNS management and CDN
+- ☁️ Cloudflare for DNS management, CDN and proxy.
 
 ## 🤝 Contributing
 
