@@ -5,10 +5,11 @@ import { cn } from "@/utils/cn";
 
 interface PropertyFormProps {
   onSubmit: (propertyLink: string) => Promise<void>;
+  onResetPropertyData: () => void; 
   status: "loading" | "Submit" | "Submitted";
 }
 
-export const PropertyForm: React.FC<PropertyFormProps> = ({ onSubmit, status }) => {
+export const PropertyForm: React.FC<PropertyFormProps> = ({ onSubmit, onResetPropertyData, status }) => {
   const [propertyLink, setPropertyLink] = useState<string>("");
   const [error, setError] = useState<string | null>(null);
   const isEnabled = status === "Submit";
@@ -22,6 +23,7 @@ export const PropertyForm: React.FC<PropertyFormProps> = ({ onSubmit, status }) 
     // Check if the link is empty or does not match the required pattern
     if (!propertyLink || !urlPattern.test(propertyLink)) {
       setError("Please enter a valid Airbnb link.");
+      onResetPropertyData();
       setPropertyLink("")
       return;
     }
