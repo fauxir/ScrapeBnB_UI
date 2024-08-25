@@ -63,7 +63,7 @@ export const PropertyForm: React.FC<PropertyFormProps> = ({ onSubmit, onResetPro
           <button
             type="submit"
             disabled={!isEnabled}
-            className="group -z-10 relative h-10 w-full md:max-w-40 overflow-hidden rounded-md bg-orange-500 px-6 text-sm font-semibold text-white transition-colors duration-300 hover:bg-orange-700"
+            className="group -z-10 relative h-10 w-full md:max-w-40 overflow-hidden rounded-md bg-orange-500 px-6 text-sm font-semibold text-black transition-colors duration-300 hover:bg-orange-700"
           >
             <AnimatePresence mode="wait" initial={false}>
               <motion.span
@@ -96,7 +96,7 @@ export const PropertyForm: React.FC<PropertyFormProps> = ({ onSubmit, onResetPro
         <AnimatePresence>
           {error && (
             <motion.div
-              className="fixed w-fit z-80 bottom-[67px] md:right-6 md:bottom-6  bg-red-500 text-white py-2 px-1 rounded-md shadow-md"
+              className="fixed w-fit z-80 bottom-[67px] md:right-6 md:bottom-6  bg-red-500 text-black py-2 px-1 rounded-md shadow-md"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
